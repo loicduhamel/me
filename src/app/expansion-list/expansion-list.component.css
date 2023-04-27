@@ -1,0 +1,28 @@
+a, p, mat-icon {
+  color: white;
+}
+
+mat-nav-list {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 86.3%;
+  margin-top: 2%;
+  background-color: #333333;
+  border-radius: 4px;
+}
+
+.mat-list-base .mat-list-item.mat-2-line, .mat-list-base .mat-list-option.mat-2-line {
+  height: 110px;
+}
+
+.mat-list-base .mat-list-item .mat-list-avatar, .mat-list-base .mat-list-option .mat-list-avatar {
+   margin-left: 1%;
+   border-radius: 0px;
+   width: 100px;
+   height: 100px;
+}
+
+.detail {
+  background-color: #3b3b3b;
+}

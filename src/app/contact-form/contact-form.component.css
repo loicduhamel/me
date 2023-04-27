@@ -1,0 +1,104 @@
+.formwidth {
+  background-color: #333333;
+  border-radius: 20px;
+  min-width: 450px;
+  max-width: 450px;
+  margin-top: 2%;
+  padding: 3% 3% 1%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25),
+  -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+.fullwidth {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 5%;
+}
+
+::ng-deep .mat-step-header .mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit {
+  background-color: white !important;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: white !important;
+  opacity: 1!important;
+}
+
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: white !important;
+}
+
+::ng-deep .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick{
+  color: white !important;
+  opacity: 0.8!important;
+}
+
+::ng-deep .mat-input-element {
+  caret-color: white !important;
+}
+
+::ng-deep .mat-form-field-invalid .mat-input-element, .mat-warn .mat-input-element {
+  caret-color: white !important;
+}
+
+::ng-deep .mat-form-field-label {
+  color: white !important;
+}
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+  color: white !important;
+}
+
+::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-label {
+  color: white!important;
+}
+
+.firstname {
+  margin-left: -10%;
+}
+
+.email {
+  margin-left: -10%;
+}
+
+.lastname {
+  margin-left: 10%;
+}
+
+.subject {
+  margin-left: 10%;
+}
+
+.message {
+  min-width: 445px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 3.5%;
+}
+
+.submit {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  color: #333333;
+  border: 1px solid transparent !important;
+  border-radius: 3px;
+}
+
+.submit:hover {
+  background-color: #333333;
+  color: white;
+  border: 1px solid white !important;
+  border-radius: 3px;
+}
+
+::ng-deep .mat-form-field-wrapper {
+  margin-bottom: 0px !important;
+  padding-bottom: 0px !important;
+}

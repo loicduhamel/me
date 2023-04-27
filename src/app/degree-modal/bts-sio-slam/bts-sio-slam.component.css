@@ -1,0 +1,6 @@
+.bts_sio_slam {
+  width: 100%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}

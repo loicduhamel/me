@@ -1,0 +1,6 @@
+.master_eii {
+  width: 55%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
