@@ -36,14 +36,13 @@
   display: none;
 }
 
-.toolbar-list {
-  width: 200px;
-}
 
 .menu_button_resp {
   color: #d6d6d6;
   text-decoration: none;
-  margin: 10%;
+  margin-left: 10%;
+  margin-top: 8%;
+  margin-bottom: 8%;
   background-color: Transparent;
   background-repeat:no-repeat;
   border: none;
@@ -52,7 +51,6 @@
   align-items: center;
   font-size: 14px;
   font-weight: 600;
-  font-family: "Segoe UI", serif;
 }
 
 .menu_button {
@@ -64,7 +62,6 @@
   border: none;
   cursor:pointer;
   font-size: 14px;
-  font-family: "Segoe UI", serif;
 }
 
 .menu_button_icon {
@@ -78,7 +75,6 @@
   border: none;
   cursor:pointer;
   font-size: 14px;
-  font-family: "Segoe UI", serif;
 }
 
 .close_button_icon {
@@ -128,6 +124,12 @@ hr {
   align-items: center;
 }
 
+.linkedin_logo_footer {
+  transform: translateY(39%);
+  width: 49px;
+  margin-left: 20px;
+}
+
 @media screen and (max-width: 1000px) {
   .toolbar-desktop {
     display: none;
@@ -156,7 +158,7 @@ a:hover {
   display: flex;
   color: #333333;
   font-size: 40%;
-  margin-bottom: 12.5%;
+  margin-bottom: 2%;
   margin-left: 1.5%;
 }
 
@@ -177,6 +179,12 @@ h2 {
 .container {
   display: flex;
   align-items: center;
+}
+
+.download-button {
+  background-color: #333333;
+  color: #d6d6d6;
+  margin-top: 15px;
 }
 
 .footer {
@@ -219,7 +227,8 @@ footer {
 }
 
 .card {
-  margin: 30px auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
   width: 300px;
   height: 300px;
   border-radius: 40px;
@@ -266,11 +275,12 @@ footer {
   }
 }
 
-.card_education {
+.card_education, .card_formation {
   max-width: 250px;
   margin-top: 2%;
   margin-bottom: 20px;
   background-color: #333333;
+  color: white;
 }
 
 mat-card-actions {
@@ -280,19 +290,10 @@ mat-card-actions {
 .degree_button {
   position: absolute;
   left: 50%;
+  top: 90%;
   transform: translateX(-50%);
-  bottom: 5px;
-  background-color: white;
-  color: #333;
-  border: 1px solid transparent !important;
+  bottom: 15px;
   border-radius: 3px;
-}
-
-.degree_button:hover {
-  transition: color 0.5s;
-  background-color: #333333;
-  color: white;
-  border: 1px solid white !important;
 }
 
 .skill_category {
@@ -345,8 +346,8 @@ app-gauge-chart {
 }
 
 .talk {
-  margin-top: 5%;
-  margin-bottom: 25%;
+  margin-top: 10%;
+  margin-bottom: 10%;
   font-size: 48px;
   font-weight: 700;
 }
@@ -383,4 +384,23 @@ app-gauge-chart {
   text-align: justify;
   text-justify: inter-word;
   font-size: 15px;
+}
+
+mat-sidenav {
+  background: #333333;
+  color: #fff;
+}
+
+.floating-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+  background: #333333;
+  border: 1px solid white;
+}
+
+.language {
+  margin-top: 3px;
+  width: 30px;
 }

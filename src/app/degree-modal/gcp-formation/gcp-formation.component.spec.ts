@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GaugeChartComponent } from './gauge-chart.component';
+import { GcpFormationComponent } from './gcp-formation.component';
 
-describe('GaugeChartComponent', () => {
-  let component: GaugeChartComponent;
-  let fixture: ComponentFixture<GaugeChartComponent>;
+describe('GcpFormationComponent', () => {
+  let component: GcpFormationComponent;
+  let fixture: ComponentFixture<GcpFormationComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GaugeChartComponent ]
+      declarations: [ GcpFormationComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GaugeChartComponent);
+    fixture = TestBed.createComponent(GcpFormationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

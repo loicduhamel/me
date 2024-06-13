@@ -7,9 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExpansionListComponent implements OnInit {
 
-  public items: string[] = [ "Item 1", "Item 2", "Item 3", "Item 4"];
-  public toggle : boolean[] = [];
-
   constructor() { }
 
   ngOnInit(): void {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
@@ -10,7 +10,10 @@ export class GcpCertificationComponent {
   constructor(public dialog: MatDialog) {}
 
   openDialog() {
-    this.dialog.open(DialogGcpCertificationComponent);
+    this.dialog.open(DialogGcpCertificationComponent, {
+      width: '80vw',
+      panelClass: 'custom-dialog-container'
+    });
   }
 }
 
@@ -18,6 +21,7 @@ export class GcpCertificationComponent {
 @Component({
   selector: 'dialog-gcp-certification-dialog',
   templateUrl: 'dialog-gcp-certification-dialog.html',
+  standalone: true,
   styleUrls: ['./gcp-certification.component.css']
 })
 export class DialogGcpCertificationComponent {}

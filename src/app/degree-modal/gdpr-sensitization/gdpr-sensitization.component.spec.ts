@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ContactFormComponent } from './contact-form.component';
+import { GdprSensitizationComponent } from './gdpr-sensitization.component';
 
-describe('ContactFormComponent', () => {
-  let component: ContactFormComponent;
-  let fixture: ComponentFixture<ContactFormComponent>;
+describe('GdprSensitizationComponent', () => {
+  let component: GdprSensitizationComponent;
+  let fixture: ComponentFixture<GdprSensitizationComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ContactFormComponent ]
+      declarations: [ GdprSensitizationComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ContactFormComponent);
+    fixture = TestBed.createComponent(GdprSensitizationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
