@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { ViewportScroller } from '@angular/common';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,46 +7,53 @@ import { ViewportScroller } from '@angular/common';
 })
 export class AppComponent {
   title = 'loicduhamel';
-  showFiller = false;
+  language = 'english';
 
   toHome() {
-    // @ts-ignore
-    document.getElementById("home").scrollIntoView({behavior:"smooth"});
+    document.getElementById("home")?.scrollIntoView({behavior:"smooth"});
   }
 
   toAboutMe() {
-    // @ts-ignore
-    document.getElementById("aboutme").scrollIntoView({behavior:"smooth"});
+    document.getElementById("aboutme")?.scrollIntoView({behavior:"smooth"});
   }
 
   toExperience() {
-    // @ts-ignore
-    document.getElementById("experience").scrollIntoView({behavior:"smooth"});
+    document.getElementById("experience")?.scrollIntoView({behavior:"smooth"});
   }
 
   toEducation() {
-    // @ts-ignore
-    document.getElementById("education").scrollIntoView({behavior:"smooth"});
+    document.getElementById("education")?.scrollIntoView({behavior:"smooth"});
   }
 
   toSkill() {
-    // @ts-ignore
-    document.getElementById("skill").scrollIntoView({behavior:"smooth"});
+    document.getElementById("skill")?.scrollIntoView({behavior:"smooth"});
   }
 
-  toCertification() {
+  toFormation() {
     // @ts-ignore
-    document.getElementById("certification").scrollIntoView({behavior:"smooth"});
+    document.getElementById("formation").scrollIntoView({behavior:"smooth"});
   }
 
-  toHobbies() {
-    // @ts-ignore
-    document.getElementById("hobbies").scrollIntoView({behavior:"smooth"});
+  toHobbie() {
+    document.getElementById("hobbie")?.scrollIntoView({behavior:"smooth"});
   }
 
   toContact() {
-    // @ts-ignore
-    document.getElementById("contact").scrollIntoView({behavior:"smooth"});
+    document.getElementById("contact")?.scrollIntoView({behavior:"smooth"});
   }
 
+  downloadCV(){
+    let link = document.createElement("a");
+    link.download = "cv_loic_duhamel";
+    link.href = "assets/document/cv_loic_duhamel.pdf";
+    link.click();
+  }
+
+  changeLanguage() {
+    if (this.language === "english") {
+      this.language = "french"
+    } else {
+      this.language = "english"
+    }
+  }
 }

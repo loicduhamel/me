@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
@@ -10,7 +10,10 @@ export class BtsSioSlamComponent {
   constructor(public dialog: MatDialog) {}
 
   openDialog() {
-    this.dialog.open(DialogBtsSioSlamComponent);
+    this.dialog.open(DialogBtsSioSlamComponent, {
+      width: '80vw',
+      panelClass: 'custom-dialog-container'
+    });
   }
 }
 
@@ -18,6 +21,7 @@ export class BtsSioSlamComponent {
 @Component({
   selector: 'dialog-bts-sio-slam-dialog',
   templateUrl: 'dialog-bts-sio-slam-dialog.html',
+  standalone: true,
   styleUrls: ['./bts-sio-slam.component.css']
 })
 export class DialogBtsSioSlamComponent {}

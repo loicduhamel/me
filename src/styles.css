@@ -1,53 +1,19 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-/* width */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px transparent;
-  border-radius: 10px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #333333;
-  border-radius: 10px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #333333;
-}
-
 .mat-drawer-backdrop.mat-drawer-shown {
   background: rgba(0,0,0,.32)
 }
 
-.gauge-chart span {
-  color: #333333;
-  margin-top: 10%;
-}
-
-.gauge-chart {
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.green-snackbar {
-  background-color: #27ae60;
-}
-
-mat-dialog-container {
-  width: 70% !important;
-  position: relative;
-  left: 14%;
-}
-
 .cdk-overlay-pane {
   pointer-events: none !important;
+}
+
+.mat-expansion-indicator svg {
+  fill: #fff !important;
+}
+
+::ng-deep button.mat-flat-button {
+  background-color: #bdc3c7 !important;
+  color: #333333 !important;
 }

@@ -1,28 +1,67 @@
-a, p, mat-icon {
+a, p, mat-icon, h3, li {
   color: white;
 }
 
-mat-nav-list {
-  position: relative;
+mat-expansion-panel {
+  background-color: #3b3b3b;
+  width: 70%;
+  min-width: 450px;
   left: 50%;
   transform: translateX(-50%);
-  width: 86.3%;
-  margin-top: 2%;
-  background-color: #333333;
-  border-radius: 4px;
+  border-radius: 0;
 }
 
-.mat-list-base .mat-list-item.mat-2-line, .mat-list-base .mat-list-option.mat-2-line {
-  height: 110px;
+img {
+  max-width: 160px;
+  width: 160px;
+  min-width: 160px;
 }
 
-.mat-list-base .mat-list-item .mat-list-avatar, .mat-list-base .mat-list-option .mat-list-avatar {
-   margin-left: 1%;
-   border-radius: 0px;
-   width: 100px;
-   height: 100px;
-}
-
-.detail {
+mat-expansion-panel-header {
   background-color: #3b3b3b;
+  height: 250px;
+}
+
+mat-expansion-panel-header:hover {
+  background: #3b3b3b !important;
+}
+
+.mat-expansion-panel-header-title, .mat-expansion-panel-header-description {
+  flex-grow: 0;
+}
+
+mat-panel-description {
+  margin-left: 20px;
+}
+
+.mat-expansion-panel-header-title, .mat-expansion-panel-header-description {
+  flex-basis: auto;
+}
+
+.mat-expansion-panel-spacing {
+  margin: 0;
+}
+
+.content {
+  margin-top: 70px;
+  padding: 16px;
+}
+
+ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+.astek {
+  margin-right: 15%;
+}
+
+.astek, .ineat {
+  max-width: 40% !important;
+  width: 40% !important;
+  min-width: 25px !important;
 }

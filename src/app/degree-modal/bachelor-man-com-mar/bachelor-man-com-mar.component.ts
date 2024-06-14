@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
@@ -10,7 +10,10 @@ export class BachelorManComMarComponent {
   constructor(public dialog: MatDialog) {}
 
   openDialog() {
-    this.dialog.open(DialogBachelorManComMarComponent);
+    this.dialog.open(DialogBachelorManComMarComponent, {
+      width: '80vw',
+      panelClass: 'custom-dialog-container'
+    });
   }
 }
 
@@ -18,6 +21,7 @@ export class BachelorManComMarComponent {
 @Component({
   selector: 'dialog-bachelor-man-com-mar-dialog',
   templateUrl: 'dialog-bachelor-man-com-mar-dialog.html',
+  standalone: true,
   styleUrls: ['./bachelor-man-com-mar.component.css']
 })
 export class DialogBachelorManComMarComponent {}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
@@ -10,7 +10,10 @@ export class BacCommerceComponent {
   constructor(public dialog: MatDialog) {}
 
   openDialog() {
-    this.dialog.open(DialogBacCommerceComponent);
+    this.dialog.open(DialogBacCommerceComponent, {
+      width: '80vw',
+      panelClass: 'custom-dialog-container'
+    });
   }
 }
 
@@ -18,6 +21,7 @@ export class BacCommerceComponent {
 @Component({
   selector: 'dialog-bac-commerce-dialog',
   templateUrl: 'dialog-bac-commerce-dialog.html',
+  standalone: true,
   styleUrls: ['./bac-commerce.component.css']
 })
 export class DialogBacCommerceComponent {}

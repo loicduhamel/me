@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
@@ -10,7 +10,10 @@ export class BepMrcuComponent {
   constructor(public dialog: MatDialog) {}
 
   openDialog() {
-    this.dialog.open(DialogBepMrcuComponent);
+    this.dialog.open(DialogBepMrcuComponent, {
+      width: '80vw',
+      panelClass: 'custom-dialog-container'
+    });
   }
 }
 
@@ -18,6 +21,7 @@ export class BepMrcuComponent {
 @Component({
   selector: 'dialog-bep-mrcu-dialog',
   templateUrl: 'dialog-bep-mrcu-dialog.html',
+  standalone: true,
   styleUrls: ['./bep-mrcu.component.css']
 })
 export class DialogBepMrcuComponent {}

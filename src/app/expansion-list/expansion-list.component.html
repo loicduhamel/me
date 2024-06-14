@@ -1,183 +1,233 @@
-<mat-nav-list>
+<mat-accordion multi>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <img class="astek" src="assets/image/astek.png" alt="ASTEK">
+        <img class="ineat" src="assets/image/ineat.png" alt="INEAT">
+      </mat-panel-title>
+      <mat-panel-description>
+        <div class="col">
+          <div class="row"><h3>Study and development engineer</h3></div>
+          <div class="row"><p>Astek | Ineat</p></div>
+          <div class="row"><p>September 2021 - Today</p></div>
+          <div class="row"><p>Lille</p></div>
+        </div>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
 
-  <!-- Ineat -->
-  <mat-list-item (click)="toggle[1] = !toggle[1]">
-    <img matListAvatar src="assets/image/ineat.png" alt="INEAT">
-    <h3 matLine>Study and development engineer</h3>
-    <p matLine>INEAT Group</p>
-    <p matLine>September 2021 - Today</p>
-    <p matLine>Lille</p>
-    <span>
-      <mat-icon *ngIf="!toggle[1]">expand_more</mat-icon>
-      <mat-icon *ngIf="toggle[1]">expand_less</mat-icon>
-     </span>
-  </mat-list-item>
-  <div class="detail" [hidden]="!toggle[1]">
-    <mat-selection-list>
-      <p>Test 1</p>
-    </mat-selection-list>
-  </div>
+    <div class="content">
+      <ul>
+        <li>Frontend development AngularJS, Angular</li>
+        <li>Backend, API and Batch development with Spring Boot, Java 8, 11, 17, 21</li>
+        <li>Using Liquibase to update databases</li>
+        <li>Creation of controller, service and class with Lombok</li>
+        <li>Creation of map with MapStruct</li>
+        <li>Repository creation with Spring Data JPA</li>
+        <li>Creation of unit tests with Mockito and Spring Boot Test</li>
+        <li>Debugs</li>
+        <li>Migrations and refactorings</li>
+        <li>Deployment on integration, recipe and pre-production environments</li>
+        <li>Query and use of PostgreSQL, MySQL relational databases</li>
+        <li>Query and use of non-relational databases MongoDB, Apache Cassandra</li>
+        <li>Using Google Cloud Platform to store documents (CSV)</li>
+        <li>Using Google Cloud Platform for using environment variables with Secret Manager</li>
+        <li>Use of Git (GitHub, GitLab) for versioning and to create CI/CDs</li>
+        <li>API migrations from Java 11 to 17</li>
+        <li>Use of Keycloak to manage authentications</li>
+        <li>Using SendGrid for sending email</li>
+      </ul>
 
-  <!-- Kiabi -->
-  <mat-list-item (click)="toggle[2] = !toggle[2]">
-    <img matListAvatar src="assets/image/kiabi.png" alt="Kiabi">
-    <h3 matLine>Analyst developer</h3>
-    <p matLine>Kiabi</p>
-    <p matLine>September 2018 - September 2021</p>
-    <p matLine>Hem</p>
-    <span>
-      <mat-icon *ngIf="!toggle[2]">expand_more</mat-icon>
-      <mat-icon *ngIf="toggle[2]">expand_less</mat-icon>
-     </span>
-  </mat-list-item>
-  <div class="detail" [hidden]="!toggle[2]">
-    <mat-selection-list>
-      <p>Test 2</p>
-    </mat-selection-list>
-  </div>
+      <p>Missions carried out for clients:</p>
+      <ul>
+        <li>Trixit (startup offering deferred payment for professionals)</li>
+        <li>Adeo / Zodio</li>
+        <li>Tessi (Numea project, case management solution for an insurance company)</li>
+      </ul>
+    </div>
+  </mat-expansion-panel>
 
-  <!-- SAD Marketing -->
-  <mat-list-item (click)="toggle[3] = !toggle[3]">
-    <img matListAvatar src="assets/image/sad_marketing.png" alt="SAD Marketing">
-    <h3 matLine>Full stack developer</h3>
-    <p matLine>SAD Marketing</p>
-    <p matLine>January 2018 - March 2018</p>
-    <p matLine>Villeneuve d'Ascq</p>
-    <span>
-      <mat-icon *ngIf="!toggle[3]">expand_more</mat-icon>
-      <mat-icon *ngIf="toggle[3]">expand_less</mat-icon>
-     </span>
-  </mat-list-item>
-  <div class="detail" [hidden]="!toggle[3]">
-    <mat-selection-list>
-      <p>Test 3</p>
-    </mat-selection-list>
-  </div>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <img src="assets/image/kiabi.png" alt="Kiabi">
+      </mat-panel-title>
+      <mat-panel-description>
+        <div class="col">
+          <div class="row"><h3>Analyst developer</h3></div>
+          <div class="row"><p>Kiabi</p></div>
+          <div class="row"><p>September 2018 - September 2021</p></div>
+          <div class="row"><p>Hem</p></div>
+        </div>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
 
-  <!-- Mon Imaginarium -->
-  <mat-list-item (click)="toggle[4] = !toggle[4]">
-    <img matListAvatar src="assets/image/mon_imaginarium.png" alt="Mon Imaginarium">
-    <h3 matLine>Web developer</h3>
-    <p matLine>Mon Imaginarium</p>
-    <p matLine>May 2017 - June 2017</p>
-    <p matLine>Hellemmes</p>
-    <span>
-      <mat-icon *ngIf="!toggle[4]">expand_more</mat-icon>
-      <mat-icon *ngIf="toggle[4]">expand_less</mat-icon>
-     </span>
-  </mat-list-item>
-  <div class="detail" [hidden]="!toggle[4]">
-    <mat-selection-list>
-      <p>Test 4</p>
-    </mat-selection-list>
-  </div>
+    <div class="content">
+      <ul>
+        <li>Web application analysis (debugging & evolution)</li>
+        <li>Web application development in Angular and Java STS</li>
+      </ul>
+    </div>
+  </mat-expansion-panel>
 
-  <!-- Flunch -->
-  <mat-list-item (click)="toggle[5] = !toggle[5]">
-    <img matListAvatar src="assets/image/flunch.png" alt="Flunch">
-    <h3 matLine>Web marketer / Community manager</h3>
-    <p matLine>Flunch</p>
-    <p matLine>April 2016 - August 2016</p>
-    <p matLine>Villeneuve d'Ascq</p>
-    <span>
-      <mat-icon *ngIf="!toggle[5]">expand_more</mat-icon>
-      <mat-icon *ngIf="toggle[5]">expand_less</mat-icon>
-     </span>
-  </mat-list-item>
-  <div class="detail" [hidden]="!toggle[5]">
-    <mat-selection-list>
-      <p>Test 5</p>
-    </mat-selection-list>
-  </div>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <img src="assets/image/sad_marketing.png" alt="SAD Marketing">
+      </mat-panel-title>
+      <mat-panel-description>
+        <div class="col">
+          <div class="row"><h3>Full stack developer</h3></div>
+          <div class="row"><p>SAD Marketing</p></div>
+          <div class="row"><p>January 2018 - March 2018</p></div>
+          <div class="row"><p>Villeneuve d'Ascq</p></div>
+        </div>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
 
-  <!-- Département du Nord -->
-  <mat-list-item (click)="toggle[6] = !toggle[6]">
-    <img matListAvatar src="assets/image/departement_du_nord.png" alt="Département du Nord">
-    <h3 matLine>Student contract record management</h3>
-    <p matLine>Département du Nord</p>
-    <p matLine>August 2014</p>
-    <p matLine>Lille</p>
-    <span>
-      <mat-icon *ngIf="!toggle[6]">expand_more</mat-icon>
-      <mat-icon *ngIf="toggle[6]">expand_less</mat-icon>
-     </span>
-  </mat-list-item>
-  <div class="detail" [hidden]="!toggle[6]">
-    <mat-selection-list>
-      <p>Test 6</p>
-    </mat-selection-list>
-  </div>
+    <div class="content">
+      <p>Developing new features and debugging a web application in vue.js & bootstrap</p>
+    </div>
+  </mat-expansion-panel>
 
-  <!-- WEBPULSER -->
-  <mat-list-item (click)="toggle[7] = !toggle[7]">
-    <img matListAvatar src="assets/image/webpulser.png" alt="WEBPULSER">
-    <h3 matLine>Custumer negotiation & prospecting</h3>
-    <p matLine>WEBPULSER</p>
-    <p matLine>June 2014 - July 2014</p>
-    <p matLine>Roubaix</p>
-    <span>
-      <mat-icon *ngIf="!toggle[7]">expand_more</mat-icon>
-      <mat-icon *ngIf="toggle[7]">expand_less</mat-icon>
-     </span>
-  </mat-list-item>
-  <div class="detail" [hidden]="!toggle[7]">
-    <mat-selection-list>
-      <p>Test 7</p>
-    </mat-selection-list>
-  </div>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <img src="assets/image/mon_imaginarium.png" alt="Mon Imaginarium">
+      </mat-panel-title>
+      <mat-panel-description>
+        <div class="col">
+          <div class="row"><h3>Web developer</h3></div>
+          <div class="row"><p>Mon Imaginarium</p></div>
+          <div class="row"><p>May 2017 - June 2017</p></div>
+          <div class="row"><p>Hellemmes</p></div>
+        </div>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
 
-  <!-- Boulanger -->
-  <mat-list-item (click)="toggle[8] = !toggle[8]">
-    <img matListAvatar src="assets/image/boulanger.png" alt="Boulanger">
-    <h3 matLine>Business facilitator & Advisor seller</h3>
-    <p matLine>Boulanger</p>
-    <p matLine>Three dates</p>
-    <p matLine>Vendin-le-Vieil</p>
-    <span>
-      <mat-icon *ngIf="!toggle[8]">expand_more</mat-icon>
-      <mat-icon *ngIf="toggle[8]">expand_less</mat-icon>
-     </span>
-  </mat-list-item>
-  <div class="detail" [hidden]="!toggle[8]">
-    <mat-selection-list>
-      <p>Test 8</p>
-    </mat-selection-list>
-  </div>
+    <div class="content">
+      <ul>
+        <li>Writing a specification</li>
+        <li>Search for software solutions</li>
+        <li>Development of a showcase website</li>
+      </ul>
+    </div>
+  </mat-expansion-panel>
 
-  <!-- Carrefour -->
-  <mat-list-item (click)="toggle[9] = !toggle[9]">
-    <img matListAvatar src="assets/image/carrefour.png" alt="Carrefour">
-    <h3 matLine>Advisor seller</h3>
-    <p matLine>Carrefour</p>
-    <p matLine>Two dates</p>
-    <p matLine>Auchy-les-Mines</p>
-    <span>
-      <mat-icon *ngIf="!toggle[9]">expand_more</mat-icon>
-      <mat-icon *ngIf="toggle[9]">expand_less</mat-icon>
-     </span>
-  </mat-list-item>
-  <div class="detail" [hidden]="!toggle[9]">
-    <mat-selection-list>
-      <p>Test 9</p>
-    </mat-selection-list>
-  </div>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <img src="assets/image/flunch.png" alt="Flunch">
+      </mat-panel-title>
+      <mat-panel-description>
+        <div class="col">
+          <div class="row"><h3>Web marketer / Community manager</h3></div>
+          <div class="row"><p>Flunch</p></div>
+          <div class="row"><p>April 2016 - August 2016</p></div>
+          <div class="row"><p>Villeneuve d'Ascq</p></div>
+        </div>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
 
-  <!-- Gémo -->
-  <mat-list-item (click)="toggle[10] = !toggle[10]">
-    <img matListAvatar src="assets/image/gemo.png" alt="Gémo">
-    <h3 matLine>Advisor seller</h3>
-    <p matLine>Gémo</p>
-    <p matLine>Two dates</p>
-    <p matLine>Auchy-les-Mines</p>
-    <span>
-      <mat-icon *ngIf="!toggle[9]">expand_more</mat-icon>
-      <mat-icon *ngIf="toggle[9]">expand_less</mat-icon>
-     </span>
-  </mat-list-item>
-  <div class="detail" [hidden]="!toggle[10]">
-    <mat-selection-list>
-      <p>Test 10</p>
-    </mat-selection-list>
-  </div>
+    <div class="content">
+      <ul>
+        <li>Merchandising management flunch-traiteur.fr website</li>
+        <li>Flunch Facebook, Twitter and Snapchat account management</li>
+      </ul>
+    </div>
+  </mat-expansion-panel>
 
-</mat-nav-list>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <img src="assets/image/departement_du_nord.png" alt="Département du Nord">
+      </mat-panel-title>
+      <mat-panel-description>
+        <div class="col">
+          <div class="row"><h3>Student contract record management</h3></div>
+          <div class="row"><p>Département du Nord</p></div>
+          <div class="row"><p>August 2014</p></div>
+          <div class="row"><p>Lille</p></div>
+        </div>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <div class="content">
+      <ul>
+        <li>Classification of departmental archives</li>
+        <li>Routing of archives</li>
+      </ul>
+    </div>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <img src="assets/image/boulanger.png" alt="Boulanger">
+      </mat-panel-title>
+      <mat-panel-description>
+        <div class="col">
+          <div class="row"><h3>Business facilitator & Advisor seller</h3></div>
+          <div class="row"><p>Boulanger</p></div>
+          <div class="row"><p>Three internships</p></div>
+          <div class="row"><p>Vendin-le-Vieil</p></div>
+        </div>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <div class="content">
+      <ul>
+        <li>Implementation of commercial events</li>
+        <li>Advice and sales to customers</li>
+        <li>Maintenance and storage of multimedia shelves</li>
+        <li>Receipt of goods in reserve</li>
+        <li>Department inventory and counting</li>
+      </ul>
+    </div>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <img src="assets/image/carrefour.png" alt="Carrefour">
+      </mat-panel-title>
+      <mat-panel-description>
+        <div class="col">
+          <div class="row"><h3>Advisor seller</h3></div>
+          <div class="row"><p>Carrefour</p></div>
+          <div class="row"><p>Two internships</p></div>
+          <div class="row"><p>Auchy-les-Mines</p></div>
+        </div>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <div class="content">
+      <ul>
+        <li>Maintenance and storage</li>
+        <li>Receipt of goods in reserve</li>
+      </ul>
+    </div>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <img src="assets/image/gemo.png" alt="Gémo">
+      </mat-panel-title>
+      <mat-panel-description>
+        <div class="col">
+          <div class="row"><h3>Advisor seller</h3></div>
+          <div class="row"><p>Gémo</p></div>
+          <div class="row"><p>Two internships</p></div>
+          <div class="row"><p>Auchy-les-Mines</p></div>
+        </div>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <div class="content">
+      <ul>
+        <li>Maintenance and storage</li>
+        <li>Receipt of goods in reserve</li>
+      </ul>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>

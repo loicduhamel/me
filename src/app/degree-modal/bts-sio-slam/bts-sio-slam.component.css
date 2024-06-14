@@ -4,3 +4,20 @@
   left: 50%;
   transform: translateX(-50%);
 }
+
+.degree-button {
+  position: relative;
+  text-decoration: none;
+  color: #333333;
+  background-color: white;
+  border: 1px solid white;
+  padding: 10px 15px;
+  border-radius: 3px;
+}
+
+.degree-button:hover {
+  color: white;
+  background-color: #333333;
+  border: 1px solid white;
+}
+
