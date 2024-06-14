@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
+import { fadeInRightOnEnterAnimation } from 'angular-animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  animations: [
+    fadeInRightOnEnterAnimation(),
+  ]
 })
 export class AppComponent {
   title = 'loicduhamel';
