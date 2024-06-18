@@ -412,7 +412,7 @@
   </mat-sidenav-content>
 </mat-sidenav-container>
 
-<button mat-fab class="floating-button" (click)="changeLanguage()">
+<button *ngIf="!isLoading" mat-fab class="floating-button" (click)="changeLanguage()">
   <img *ngIf="language === 'english'" class="language" src="assets/image/english.png" alt="language">
   <img *ngIf="language === 'french'" class="language" src="assets/image/french.png" alt="language">
 </button>
