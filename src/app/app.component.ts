@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { fadeInRightOnEnterAnimation } from 'angular-animations';
+import { PreloadService } from 'src/app/services/preloadService';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +10,18 @@ import { fadeInRightOnEnterAnimation } from 'angular-animations';
     fadeInRightOnEnterAnimation(),
   ]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'loicduhamel';
   language = 'english';
+  isLoading = true;
+
+  constructor(private preloadService: PreloadService) {}
+
+  ngOnInit(): void {
+    this.preloadService.preloadAssets().then(() => {
+      this.isLoading = false;
+    });
+  }
 
   toHome() {
     document.getElementById("home")?.scrollIntoView({behavior:"smooth"});
@@ -34,8 +44,7 @@ export class AppComponent {
   }
 
   toFormation() {
-    // @ts-ignore
-    document.getElementById("formation").scrollIntoView({behavior:"smooth"});
+    document.getElementById("formation")?.scrollIntoView({ behavior: "smooth" });
   }
 
   toHobbie() {
@@ -54,10 +63,6 @@ export class AppComponent {
   }
 
   changeLanguage() {
-    if (this.language === "english") {
-      this.language = "french"
-    } else {
-      this.language = "english"
-    }
+    this.language = this.language === 'english' ? 'french' : 'english';
   }
 }

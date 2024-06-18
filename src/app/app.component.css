@@ -11,6 +11,7 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  --mdc-circular-progress-active-indicator-color: #333333;
 }
 
 .mat-sidenav-container {
@@ -403,4 +404,11 @@ mat-sidenav {
 .language {
   margin-top: 3px;
   width: 30px;
+}
+
+.loading-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
