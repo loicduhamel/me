@@ -6,7 +6,6 @@ import { Injectable } from '@angular/core';
 export class PreloadService {
 
   private assets: string[] = [
-    'https://loicduhamel.github.io/me/assets/document/cv_loic_duhamel.pdf',
     'https://loicduhamel.github.io/me/assets/image/astek.png',
     'https://loicduhamel.github.io/me/assets/image/astek_formation.png',
     'https://loicduhamel.github.io/me/assets/image/bac_pro_commerce.png',
