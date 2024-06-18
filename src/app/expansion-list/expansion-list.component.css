@@ -1,37 +1,73 @@
+.accordion-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 a, p, mat-icon, h3, li {
   color: white;
 }
 
 mat-expansion-panel {
   background-color: #3b3b3b;
-  width: 70%;
-  min-width: 450px;
-  left: 50%;
-  transform: translateX(-50%);
+  width: 100%;
+  max-width: 70vw;
+  min-width: 300px;
   border-radius: 0;
 }
 
 img {
-  max-width: 160px;
-  width: 160px;
-  min-width: 160px;
+  width: auto;
+  max-width: 200px;
+  height: auto;
+}
+
+.astek, .ineat {
+  max-width: 100%;
+  height: auto;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+
+.mat-expansion-panel-header-title, .mat-expansion-panel-header-description {
+  flex-grow: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 mat-expansion-panel-header {
   background-color: #3b3b3b;
-  height: 250px;
+  min-height: 250px;
+  align-items: center;
 }
 
 mat-expansion-panel-header:hover {
   background: #3b3b3b !important;
 }
 
-.mat-expansion-panel-header-title, .mat-expansion-panel-header-description {
-  flex-grow: 0;
+.mat-expansion-panel-header-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
 }
 
-mat-panel-description {
+.mat-expansion-panel-header-title img {
+  max-height: 100%;
+}
+
+.mat-expansion-panel-header-description .col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.mat-expansion-panel-header-description {
   margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .mat-expansion-panel-header-title, .mat-expansion-panel-header-description {
@@ -43,8 +79,7 @@ mat-panel-description {
 }
 
 .content {
-  margin-top: 70px;
-  padding: 16px;
+  margin-top: 40px;
 }
 
 ul {
@@ -56,12 +91,48 @@ li {
   margin-bottom: 8px;
 }
 
-.astek {
-  margin-right: 15%;
+@media all and (max-width: 768px) {
+  mat-expansion-panel-header {
+    height: auto;
+  }
+
+  img {
+    max-width: 100px;
+    width: 100px;
+    min-width: 100px;
+  }
 }
 
-.astek, .ineat {
-  max-width: 40% !important;
-  width: 40% !important;
-  min-width: 25px !important;
+@media all and (max-width: 500px) {
+  img {
+    max-width: 80px;
+    width: 80px;
+    min-width: 80px;
+  }
+}
+
+.container {
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+@media all and (max-width: 768px) {
+  .container {
+    padding: 8px;
+  }
+}
+
+@media all and (min-width: 769px) {
+  .mat-expansion-panel-header-title {
+    display: flex;
+    align-items: center;
+  }
+
+  .mat-expansion-panel-header-title img {
+    margin-right: 10px;
+  }
+
+  .mat-expansion-panel-header-description {
+    margin-left: 20px;
+  }
 }

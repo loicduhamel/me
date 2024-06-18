@@ -258,13 +258,12 @@
               <mat-card class="card_formation">
                 <img mat-card-image src="assets/image/gcp.png" alt="Google Cloud Platform">
                 <mat-card-content>
-                  <h3>Course certification: Google Cloud Big Data and Machine Learning Fundamentals</h3>
-                  <h4>Offer by: Google Cloud Training</h4>
-                  <p>Passed with: Coursera</p>
+                  <h3>Formation: Google Cloud Platform Fundamentals: Core Infrastructure</h3>
+                  <p>Passed with: Orsys formation</p>
                   <p>Date: 2024</p>
                 </mat-card-content>
                 <mat-card-actions>
-                  <app-gcp-certification class="degree_button"></app-gcp-certification>
+                  <app-gcp-formation class="degree_button"></app-gcp-formation>
                 </mat-card-actions>
               </mat-card>
               <mat-card class="card_formation">
@@ -315,12 +314,13 @@
                 <mat-card class="card_formation">
                   <img mat-card-image src="assets/image/gcp.png" alt="Google Cloud Platform">
                   <mat-card-content>
-                    <h3>Formation: Google Cloud Platform Fundamentals: Core Infrastructure</h3>
-                    <p>Passed with: Orsys formation</p>
+                    <h3>Course certification: Google Cloud Big Data and Machine Learning Fundamentals</h3>
+                    <h4>Offer by: Google Cloud Training</h4>
+                    <p>Passed with: Coursera</p>
                     <p>Date: 2021</p>
                   </mat-card-content>
                   <mat-card-actions>
-                    <app-gcp-formation class="degree_button"></app-gcp-formation>
+                    <app-gcp-certification class="degree_button"></app-gcp-certification>
                   </mat-card-actions>
                 </mat-card>
               </div>
@@ -408,7 +408,7 @@
   </mat-sidenav-content>
 </mat-sidenav-container>
 
-<button mat-fab class="floating-button">
-  <img *ngIf="language === 'english'" class="language" src="assets/image/english.png" alt="language" (click)="changeLanguage()">
-  <img *ngIf="language === 'french'" class="language" src="assets/image/french.png" alt="language" (click)="changeLanguage()">
+<button mat-fab class="floating-button" (click)="changeLanguage()">
+  <img *ngIf="language === 'english'" class="language" src="assets/image/english.png" alt="language">
+  <img *ngIf="language === 'french'" class="language" src="assets/image/french.png" alt="language">
 </button>

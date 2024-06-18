@@ -1,6 +1,12 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+a, button {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
 .mat-drawer-backdrop.mat-drawer-shown {
   background: rgba(0,0,0,.32)
 }
