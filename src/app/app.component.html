@@ -22,6 +22,9 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <div style="height: 88vh;">
+      <div *ngIf="isLoading" class="loading-indicator">
+        <mat-spinner [diameter]="50"></mat-spinner>
+      </div>
 
       <!-- Toolbar responsive -->
       <mat-toolbar class="toolbar-responsive">
@@ -48,362 +51,363 @@
       </mat-toolbar>
 
       <!-- Content -->
-      <div class="content" id="home">
-        <div class="container">
-          <img id="img" src="assets/image/loic_duhamel.png" alt="Loïc Duhamel">
-          <div class="col" @fadeInRightOnEnter>
-            <h1>
-              <p class="hello">Hello, I'm</p>
-              <div>Loïc</div>
-              <div style="margin-top: 2%">Duhamel</div>
-            </h1>
-            <button mat-fab extended class="download-button" (click)="downloadCV()">
-              <mat-icon>download</mat-icon>
-              Download my CV
-            </button>
-          </div>
-        </div>
-        <div class="parts_1" id="aboutme">
-          <h2>About me</h2>
-          <p class="about_me_text">I am, initially, a commercial profile. Then, I continued on this path by specializing in web marketing and community management. Then, being passionate about new technologies, the web and the mobile, I wanted to go further by combining my web business skills with the technique. So that's why I continued my studies in computer science.
-            From now on, during my professional career, I wish to continue to learn in order to enrich my skills in order to materialize future projects.</p>
-          <div class="cards">
-            <div class="cards-list">
-
-              <div class="card 1">
-                <div class="card_image">
-                  <img src="assets/image/developer.gif" alt="Developer"/>
-                </div>
-                <div class="card_title title-black">
-                  <p>Developer</p>
-                </div>
-              </div>
-
-              <div class="card 2">
-                <div class="card_image">
-                  <img src="assets/image/web_marketer.gif" alt="Web marketer"/>
-                </div>
-                <div class="card_title title-black">
-                  <p>Web marketer</p>
-                </div>
-              </div>
-
-              <div class="card 3">
-                <div class="card_image">
-                  <img src="assets/image/community_manager.gif" alt="Community manager"/>
-                </div>
-                <div class="card_title title-black">
-                  <p>Community manager</p>
-                </div>
-              </div>
-
-              <div class="card 4">
-                <div class="card_image">
-                  <img src="assets/image/driving_licence.gif" alt="Driving licence"/>
-                </div>
-                <div class="card_title title-black">
-                  <p>Driving licence</p>
-                </div>
-              </div>
-
+      <div *ngIf="!isLoading">
+        <div class="content" id="home">
+          <div class="container">
+            <img id="img" src="assets/image/loic_duhamel.png" alt="Loïc Duhamel">
+            <div class="col" @fadeInRightOnEnter>
+              <h1>
+                <p class="hello">Hello, I'm</p>
+                <div>Loïc</div>
+                <div style="margin-top: 2%">Duhamel</div>
+              </h1>
+              <button mat-fab extended class="download-button" (click)="downloadCV()">
+                <mat-icon>download</mat-icon>
+                Download my CV
+              </button>
             </div>
           </div>
-        </div>
-        <div class="parts_2" id="experience">
-          <h2>Experience</h2>
-          <app-expansion-list></app-expansion-list>
-        </div>
-        <div class="parts_1" id="education">
-          <h2>Education</h2>
-          <div class="cards">
-            <div class="cards-list">
-              <mat-card class="card_education">
-                <img mat-card-image src="assets/image/efficom.png" alt="Efficom">
-                <mat-card-content>
-                  <h3>Degree: Master - Computer engineering expert</h3>
-                  <h4>Specialization: Software engineering speciality</h4>
-                  <p>School: Efficom - Lille</p>
-                  <p>Date: 2021</p>
-                </mat-card-content>
-                <mat-card-actions>
-                  <app-master-eii class="degree_button"></app-master-eii>
-                </mat-card-actions>
-              </mat-card>
-              <mat-card class="card_education">
-                <img mat-card-image src="assets/image/epsi.png" alt="EPSI">
-                <mat-card-content>
-                  <h3>Degree: Bachelor of Computer Engineering</h3>
-                  <h4>Specialization: IT designer developer</h4>
-                  <p>School: EPSI - Lille</p>
-                  <p>Date: 2019</p>
-                </mat-card-content>
-                <mat-card-actions>
-                  <app-tp-cdi class="degree_button"></app-tp-cdi>
-                </mat-card-actions>
-              </mat-card>
-              <mat-card class="card_education">
-                <img mat-card-image src="assets/image/epsi.png" alt="EPSI">
-                <mat-card-content>
-                  <h3>Degree: High technician degree</h3>
-                  <h4>Specialization: IT Services to Organizations</h4>
-                  <p>School: EPSI - Lille</p>
-                  <p>Date: 2018</p>
-                </mat-card-content>
-                <mat-card-actions>
-                  <app-bts-sio-slam class="degree_button"></app-bts-sio-slam>
-                </mat-card-actions>
-              </mat-card>
-            </div>
-            <div class="cards-list">
-              <mat-card class="card_education">
-                <img mat-card-image src="assets/image/isefac.png" alt="Isefac">
-                <mat-card-content>
-                  <h3>Degree: Bachelor in Commercial Management and Marketing</h3>
-                  <h4>Specialization: Web Marketing & Community Management</h4>
-                  <p>School: ISEFAC Bachelor business school - Lille</p>
-                  <p>Date: 2016</p>
-                </mat-card-content>
-                <mat-card-actions>
-                  <app-bachelor-man-com-mar class="degree_button"></app-bachelor-man-com-mar>
-                </mat-card-actions>
-              </mat-card>
-              <mat-card class="card_education">
-                <img mat-card-image src="assets/image/st_paul.png" alt="Lycée St-Paul">
-                <mat-card-content>
-                  <h3>Degree: High school degree</h3>
-                  <h4>Specialization: Business diploma</h4>
-                  <p>School: Saint-Paul High school - Lens</p>
-                  <p>Date: 2013</p>
-                </mat-card-content>
-                <mat-card-actions>
-                  <app-bac-commerce class="degree_button"></app-bac-commerce>
-                </mat-card-actions>
-              </mat-card>
-              <mat-card class="card_education">
-                <img mat-card-image src="assets/image/st_paul.png" alt="Lycée St-Paul">
-                <mat-card-content>
-                  <h3>Degree: Vocational qualification</h3>
-                  <h4>Specialization: Trades Customer Relationship Users</h4>
-                  <p>School: Saint-Paul High school - Lens</p>
-                  <p>Date: 2012</p>
-                </mat-card-content>
-                <mat-card-actions>
-                  <app-bep-mrcu class="degree_button"></app-bep-mrcu>
-                </mat-card-actions>
-              </mat-card>
-            </div>
-          </div>
-        </div>
-        <div class="parts_2" id="skill">
-          <h2>Skill</h2>
-          <div class="skill_category">
-            <mat-icon class="skill_icon">computer</mat-icon>
-            <h3 class="skill_category_title">IT</h3>
-            <hr class="skill_separator">
-          </div>
-          <div class="skill_tags">
-            <span class="tag">Spring Boot</span>
-            <span class="tag">Angular</span>
-            <span class="tag">Vue.js</span>
-            <span class="tag">Flutter</span>
-            <span class="tag">Python</span>
-            <span class="tag">SQL</span>
-            <span class="tag">UML</span>
-            <span class="tag">Google Cloud Platform</span>
-            <span class="tag">Microsoft Azure</span>
-            <span class="tag">Git</span>
-            <span class="tag">CI/CD</span>
-            <span class="tag">Adobe Photoshop</span>
-            <span class="tag">Adobe Indesign</span>
-            <span class="tag">Adobe XD</span>
-            <span class="tag">Web design</span>
-            <span class="tag">Microsoft Office</span>
-            <span class="tag">Microsoft Windows</span>
-            <span class="tag">Mac OS X</span>
-            <span class="tag">Linux</span>
-            <span class="tag">Prezi</span>
-          </div>
-          <div class="skill_category">
-            <mat-icon class="skill_icon">sell</mat-icon>
-            <h3 class="skill_category_title">Business</h3>
-            <hr class="skill_separator">
-          </div>
-          <div class="skill_tags">
-            <span class="tag">Marketing</span>
-            <span class="tag">Communication</span>
-            <span class="tag">Community management</span>
-            <span class="tag">Social networks</span>
-            <span class="tag">Gestion</span>
-            <span class="tag">Sales</span>
-            <span class="tag">Create & animate commercial animation</span>
-            <span class="tag">SEO/SEA</span>
-            <span class="tag">Google Analytics</span>
-            <span class="tag">Google Adwords</span>
-          </div>
-          <div class="skill_category">
-            <mat-icon class="skill_icon">language</mat-icon>
-            <h3 class="skill_category_title">Languages</h3>
-            <hr class="skill_separator">
-          </div>
-          <div class="skill_tags">
-            <span class="tag">French: native</span>
-            <span class="tag">English: professional</span>
-            <span class="tag">Spanish: notion</span>
-          </div>
-        </div>
-        <div class="parts_1" id="formation">
-          <h2>Formation</h2>
-          <div class="cards">
-            <div class="cards-list">
-              <mat-card class="card_formation">
-                <img mat-card-image src="assets/image/gcp.png" alt="Google Cloud Platform">
-                <mat-card-content>
-                  <h3>Formation: Google Cloud Platform Fundamentals: Core Infrastructure</h3>
-                  <p>Passed with: Orsys formation</p>
-                  <p>Date: 2024</p>
-                </mat-card-content>
-                <mat-card-actions>
-                  <app-gcp-formation class="degree_button"></app-gcp-formation>
-                </mat-card-actions>
-              </mat-card>
-              <mat-card class="card_formation">
-                <img mat-card-image src="assets/image/astek_formation.png" alt="Security sensitization">
-                <mat-card-content>
-                  <h3>Security sensitization: ISO 27001 - level 1 & 2</h3>
-                  <p>Passed with: Astek</p>
-                  <p>Date: 2022 - 2023</p>
-                </mat-card-content>
-                <mat-card-actions>
-                  <app-security-sensitization class="degree_button"></app-security-sensitization>
-                </mat-card-actions>
-              </mat-card>
-              <mat-card class="card_formation">
-                <img mat-card-image src="assets/image/astek_formation.png" alt="GDPR sensitization">
-                <mat-card-content>
-                  <h3>GDPR sensitization</h3>
-                  <p>Passed with: Astek</p>
-                  <p>Date: 2022</p>
-                </mat-card-content>
-                <mat-card-actions>
-                  <app-gdpr-sensitization class="degree_button"></app-gdpr-sensitization>
-                </mat-card-actions>
-              </mat-card>
+          <div class="parts_1" id="aboutme">
+            <h2>About me</h2>
+            <p class="about_me_text">I am, initially, a commercial profile. Then, I continued on this path by specializing in web marketing and community management. Then, being passionate about new technologies, the web and the mobile, I wanted to go further by combining my web business skills with the technique. So that's why I continued my studies in computer science.
+              From now on, during my professional career, I wish to continue to learn in order to enrich my skills in order to materialize future projects.</p>
+            <div class="cards">
               <div class="cards-list">
-                <mat-card class="card_formation">
-                  <img mat-card-image src="assets/image/astek_formation.png" alt="Quality sensitization">
+
+                <div class="card 1">
+                  <div class="card_image">
+                    <img src="assets/image/developer.gif" alt="Developer"/>
+                  </div>
+                  <div class="card_title title-black">
+                    <p>Developer</p>
+                  </div>
+                </div>
+
+                <div class="card 2">
+                  <div class="card_image">
+                    <img src="assets/image/web_marketer.gif" alt="Web marketer"/>
+                  </div>
+                  <div class="card_title title-black">
+                    <p>Web marketer</p>
+                  </div>
+                </div>
+
+                <div class="card 3">
+                  <div class="card_image">
+                    <img src="assets/image/community_manager.gif" alt="Community manager"/>
+                  </div>
+                  <div class="card_title title-black">
+                    <p>Community manager</p>
+                  </div>
+                </div>
+
+                <div class="card 4">
+                  <div class="card_image">
+                    <img src="assets/image/driving_licence.gif" alt="Driving licence"/>
+                  </div>
+                  <div class="card_title title-black">
+                    <p>Driving licence</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="parts_2" id="experience">
+            <h2>Experience</h2>
+            <app-expansion-list></app-expansion-list>
+          </div>
+          <div class="parts_1" id="education">
+            <h2>Education</h2>
+            <div class="cards">
+              <div class="cards-list">
+                <mat-card class="card_education">
+                  <img mat-card-image src="assets/image/efficom.png" alt="Efficom">
                   <mat-card-content>
-                    <h3>Quality sensitization: ISO 9001</h3>
-                    <p>Passed with: Astek</p>
-                    <p>Date: 2022</p>
-                  </mat-card-content>
-                  <mat-card-actions>
-                    <app-quality-sensitization class="degree_button"></app-quality-sensitization>
-                  </mat-card-actions>
-                </mat-card>
-                <mat-card class="card_formation">
-                  <img mat-card-image src="assets/image/astek_formation.png" alt="Environment sensitization">
-                  <mat-card-content>
-                    <h3>Environment sensitization: ISO 14001</h3>
-                    <p>Passed with: Astek</p>
-                    <p>Date: 2022</p>
-                  </mat-card-content>
-                  <mat-card-actions>
-                    <app-environment-sensitization class="degree_button"></app-environment-sensitization>
-                  </mat-card-actions>
-                </mat-card>
-                <mat-card class="card_formation">
-                  <img mat-card-image src="assets/image/gcp.png" alt="Google Cloud Platform">
-                  <mat-card-content>
-                    <h3>Course certification: Google Cloud Big Data and Machine Learning Fundamentals</h3>
-                    <h4>Offer by: Google Cloud Training</h4>
-                    <p>Passed with: Coursera</p>
+                    <h3>Degree: Master - Computer engineering expert</h3>
+                    <h4>Specialization: Software engineering speciality</h4>
+                    <p>School: Efficom - Lille</p>
                     <p>Date: 2021</p>
                   </mat-card-content>
                   <mat-card-actions>
-                    <app-gcp-certification class="degree_button"></app-gcp-certification>
+                    <app-master-eii class="degree_button"></app-master-eii>
+                  </mat-card-actions>
+                </mat-card>
+                <mat-card class="card_education">
+                  <img mat-card-image src="assets/image/epsi.png" alt="EPSI">
+                  <mat-card-content>
+                    <h3>Degree: Bachelor of Computer Engineering</h3>
+                    <h4>Specialization: IT designer developer</h4>
+                    <p>School: EPSI - Lille</p>
+                    <p>Date: 2019</p>
+                  </mat-card-content>
+                  <mat-card-actions>
+                    <app-tp-cdi class="degree_button"></app-tp-cdi>
+                  </mat-card-actions>
+                </mat-card>
+                <mat-card class="card_education">
+                  <img mat-card-image src="assets/image/epsi.png" alt="EPSI">
+                  <mat-card-content>
+                    <h3>Degree: High technician degree</h3>
+                    <h4>Specialization: IT Services to Organizations</h4>
+                    <p>School: EPSI - Lille</p>
+                    <p>Date: 2018</p>
+                  </mat-card-content>
+                  <mat-card-actions>
+                    <app-bts-sio-slam class="degree_button"></app-bts-sio-slam>
+                  </mat-card-actions>
+                </mat-card>
+              </div>
+              <div class="cards-list">
+                <mat-card class="card_education">
+                  <img mat-card-image src="assets/image/isefac.png" alt="Isefac">
+                  <mat-card-content>
+                    <h3>Degree: Bachelor in Commercial Management and Marketing</h3>
+                    <h4>Specialization: Web Marketing & Community Management</h4>
+                    <p>School: ISEFAC Bachelor business school - Lille</p>
+                    <p>Date: 2016</p>
+                  </mat-card-content>
+                  <mat-card-actions>
+                    <app-bachelor-man-com-mar class="degree_button"></app-bachelor-man-com-mar>
+                  </mat-card-actions>
+                </mat-card>
+                <mat-card class="card_education">
+                  <img mat-card-image src="assets/image/st_paul.png" alt="Lycée St-Paul">
+                  <mat-card-content>
+                    <h3>Degree: High school degree</h3>
+                    <h4>Specialization: Business diploma</h4>
+                    <p>School: Saint-Paul High school - Lens</p>
+                    <p>Date: 2013</p>
+                  </mat-card-content>
+                  <mat-card-actions>
+                    <app-bac-commerce class="degree_button"></app-bac-commerce>
+                  </mat-card-actions>
+                </mat-card>
+                <mat-card class="card_education">
+                  <img mat-card-image src="assets/image/st_paul.png" alt="Lycée St-Paul">
+                  <mat-card-content>
+                    <h3>Degree: Vocational qualification</h3>
+                    <h4>Specialization: Trades Customer Relationship Users</h4>
+                    <p>School: Saint-Paul High school - Lens</p>
+                    <p>Date: 2012</p>
+                  </mat-card-content>
+                  <mat-card-actions>
+                    <app-bep-mrcu class="degree_button"></app-bep-mrcu>
                   </mat-card-actions>
                 </mat-card>
               </div>
             </div>
           </div>
-        </div>
-        <div class="parts_2" id="hobbie">
-          <h2>Hobbie</h2>
-          <div class="cards">
-            <div class="cards-list">
-
-              <div class="card 5">
-                <div class="card_image">
-                  <img src="assets/image/new_technologies.gif" alt="New technologies"/>
-                </div>
-                <div class="card_title title-black">
-                  <p>New technologies</p>
-                </div>
-              </div>
-
-              <div class="card 6">
-                <div class="card_image">
-                  <img src="assets/image/space_news.gif" alt="Space news"/>
-                </div>
-                <div class="card_title title-black">
-                  <p>Space news</p>
-                </div>
-              </div>
-
-              <div class="card 7">
-                <div class="card_image">
-                  <img src="assets/image/video_games.gif" alt="Video games"/>
-                </div>
-                <div class="card_title title-black">
-                  <p>Video games</p>
+          <div class="parts_2" id="skill">
+            <h2>Skill</h2>
+            <div class="skill_category">
+              <mat-icon class="skill_icon">computer</mat-icon>
+              <h3 class="skill_category_title">IT</h3>
+              <hr class="skill_separator">
+            </div>
+            <div class="skill_tags">
+              <span class="tag">Spring Boot</span>
+              <span class="tag">Angular</span>
+              <span class="tag">Vue.js</span>
+              <span class="tag">Flutter</span>
+              <span class="tag">Python</span>
+              <span class="tag">SQL</span>
+              <span class="tag">UML</span>
+              <span class="tag">Google Cloud Platform</span>
+              <span class="tag">Microsoft Azure</span>
+              <span class="tag">Git</span>
+              <span class="tag">CI/CD</span>
+              <span class="tag">Adobe Photoshop</span>
+              <span class="tag">Adobe Indesign</span>
+              <span class="tag">Adobe XD</span>
+              <span class="tag">Web design</span>
+              <span class="tag">Microsoft Office</span>
+              <span class="tag">Microsoft Windows</span>
+              <span class="tag">Mac OS X</span>
+              <span class="tag">Linux</span>
+              <span class="tag">Prezi</span>
+            </div>
+            <div class="skill_category">
+              <mat-icon class="skill_icon">sell</mat-icon>
+              <h3 class="skill_category_title">Business</h3>
+              <hr class="skill_separator">
+            </div>
+            <div class="skill_tags">
+              <span class="tag">Marketing</span>
+              <span class="tag">Communication</span>
+              <span class="tag">Community management</span>
+              <span class="tag">Social networks</span>
+              <span class="tag">Gestion</span>
+              <span class="tag">Sales</span>
+              <span class="tag">Create & animate commercial animation</span>
+              <span class="tag">SEO/SEA</span>
+              <span class="tag">Google Analytics</span>
+              <span class="tag">Google Adwords</span>
+            </div>
+            <div class="skill_category">
+              <mat-icon class="skill_icon">language</mat-icon>
+              <h3 class="skill_category_title">Languages</h3>
+              <hr class="skill_separator">
+            </div>
+            <div class="skill_tags">
+              <span class="tag">French: native</span>
+              <span class="tag">English: professional</span>
+              <span class="tag">Spanish: notion</span>
+            </div>
+          </div>
+          <div class="parts_1" id="formation">
+            <h2>Formation</h2>
+            <div class="cards">
+              <div class="cards-list">
+                <mat-card class="card_formation">
+                  <img mat-card-image src="assets/image/gcp.png" alt="Google Cloud Platform">
+                  <mat-card-content>
+                    <h3>Formation: Google Cloud Platform Fundamentals: Core Infrastructure</h3>
+                    <p>Passed with: Orsys formation</p>
+                    <p>Date: 2024</p>
+                  </mat-card-content>
+                  <mat-card-actions>
+                    <app-gcp-formation class="degree_button"></app-gcp-formation>
+                  </mat-card-actions>
+                </mat-card>
+                <mat-card class="card_formation">
+                  <img mat-card-image src="assets/image/astek_formation.png" alt="Security sensitization">
+                  <mat-card-content>
+                    <h3>Security sensitization: ISO 27001 - level 1 & 2</h3>
+                    <p>Passed with: Astek</p>
+                    <p>Date: 2022 - 2023</p>
+                  </mat-card-content>
+                  <mat-card-actions>
+                    <app-security-sensitization class="degree_button"></app-security-sensitization>
+                  </mat-card-actions>
+                </mat-card>
+                <mat-card class="card_formation">
+                  <img mat-card-image src="assets/image/astek_formation.png" alt="GDPR sensitization">
+                  <mat-card-content>
+                    <h3>GDPR sensitization</h3>
+                    <p>Passed with: Astek</p>
+                    <p>Date: 2022</p>
+                  </mat-card-content>
+                  <mat-card-actions>
+                    <app-gdpr-sensitization class="degree_button"></app-gdpr-sensitization>
+                  </mat-card-actions>
+                </mat-card>
+                <div class="cards-list">
+                  <mat-card class="card_formation">
+                    <img mat-card-image src="assets/image/astek_formation.png" alt="Quality sensitization">
+                    <mat-card-content>
+                      <h3>Quality sensitization: ISO 9001</h3>
+                      <p>Passed with: Astek</p>
+                      <p>Date: 2022</p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                      <app-quality-sensitization class="degree_button"></app-quality-sensitization>
+                    </mat-card-actions>
+                  </mat-card>
+                  <mat-card class="card_formation">
+                    <img mat-card-image src="assets/image/astek_formation.png" alt="Environment sensitization">
+                    <mat-card-content>
+                      <h3>Environment sensitization: ISO 14001</h3>
+                      <p>Passed with: Astek</p>
+                      <p>Date: 2022</p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                      <app-environment-sensitization class="degree_button"></app-environment-sensitization>
+                    </mat-card-actions>
+                  </mat-card>
+                  <mat-card class="card_formation">
+                    <img mat-card-image src="assets/image/gcp.png" alt="Google Cloud Platform">
+                    <mat-card-content>
+                      <h3>Course certification: Google Cloud Big Data and Machine Learning Fundamentals</h3>
+                      <h4>Offer by: Google Cloud Training</h4>
+                      <p>Passed with: Coursera</p>
+                      <p>Date: 2021</p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                      <app-gcp-certification class="degree_button"></app-gcp-certification>
+                    </mat-card-actions>
+                  </mat-card>
                 </div>
               </div>
             </div>
+          </div>
+          <div class="parts_2" id="hobbie">
+            <h2>Hobbie</h2>
+            <div class="cards">
+              <div class="cards-list">
+
+                <div class="card 5">
+                  <div class="card_image">
+                    <img src="assets/image/new_technologies.gif" alt="New technologies"/>
+                  </div>
+                  <div class="card_title title-black">
+                    <p>New technologies</p>
+                  </div>
+                </div>
+
+                <div class="card 6">
+                  <div class="card_image">
+                    <img src="assets/image/space_news.gif" alt="Space news"/>
+                  </div>
+                  <div class="card_title title-black">
+                    <p>Space news</p>
+                  </div>
+                </div>
+
+                <div class="card 7">
+                  <div class="card_image">
+                    <img src="assets/image/video_games.gif" alt="Video games"/>
+                  </div>
+                  <div class="card_title title-black">
+                    <p>Video games</p>
+                  </div>
+                </div>
+              </div>
 
               <div class="cards-list">
-              <div class="card 8">
-                <div class="card_image">
-                  <img src="assets/image/heroic_fantasy.gif" alt="Heroic fantasy"/>
+                <div class="card 8">
+                  <div class="card_image">
+                    <img src="assets/image/heroic_fantasy.gif" alt="Heroic fantasy"/>
+                  </div>
+                  <div class="card_title title-black">
+                    <p>Heroic fantasy</p>
+                  </div>
                 </div>
-                <div class="card_title title-black">
-                  <p>Heroic fantasy</p>
-                </div>
-              </div>
 
-              <div class="card 9">
-                <div class="card_image">
-                  <img src="assets/image/science_fiction.gif" alt="Science fiction"/>
+                <div class="card 9">
+                  <div class="card_image">
+                    <img src="assets/image/science_fiction.gif" alt="Science fiction"/>
+                  </div>
+                  <div class="card_title title-black">
+                    <p>Science fiction</p>
+                  </div>
                 </div>
-                <div class="card_title title-black">
-                  <p>Science fiction</p>
-                </div>
-              </div>
 
-              <div class="card 10">
-                <div class="card_image">
-                  <img src="assets/image/beer.gif" alt="Beer"/>
-                </div>
-                <div class="card_title title-black">
-                  <p>Beer</p>
+                <div class="card 10">
+                  <div class="card_image">
+                    <img src="assets/image/beer.gif" alt="Beer"/>
+                  </div>
+                  <div class="card_title title-black">
+                    <p>Beer</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Footer -->
-      <div class="footer" id="contact">
-        <footer>
-          <div>
-            <p class="talk">Let's talk!</p>
-            <a class="talk_button" href="mailto:loic.duhamel95@gmail.com?subject=Let's talk!">CONTACT ME</a>
-            <a href="https://www.linkedin.com/in/loicduhamel/"><svg class="linkedin_logo_footer" xmlns="http://www.w3.org/2000/svg" id="Capa_1" x="0px" y="0px" viewBox="0 0 510 510"><path fill="white" data-original="#000000" style="" class="" d="M459,0H51C22.95,0,0,22.95,0,51v408c0,28.05,22.95,51,51,51h408c28.05,0,51-22.95,51-51V51C510,22.95,487.05,0,459,0z     M153,433.5H76.5V204H153V433.5z M114.75,160.65c-25.5,0-45.9-20.4-45.9-45.9s20.4-45.9,45.9-45.9s45.9,20.4,45.9,45.9    S140.25,160.65,114.75,160.65z M433.5,433.5H357V298.35c0-20.399-17.85-38.25-38.25-38.25s-38.25,17.851-38.25,38.25V433.5H204    V204h76.5v30.6c12.75-20.4,40.8-35.7,63.75-35.7c48.45,0,89.25,40.8,89.25,89.25V433.5z"/></svg></a>
-          </div>
-          <p class="end_text">Develop with <svg xmlns="http://www.w3.org/2000/svg" id="Capa_1" x="0px" y="0px" viewBox="0 0 391.837 391.837" style="enable-background:new 0 0 391.837 391.837;" xml:space="preserve" width="20"><path style="fill:#D7443E;" d="M285.257,35.528c58.743,0.286,106.294,47.836,106.58,106.58   c0,107.624-195.918,214.204-195.918,214.204S0,248.165,0,142.108c0-58.862,47.717-106.58,106.58-106.58l0,0   c36.032-0.281,69.718,17.842,89.339,48.065C215.674,53.517,249.273,35.441,285.257,35.528z"/></svg><br/>&copy; 2021 Loïc Duhamel</p>
-        </footer>
+        <!-- Footer -->
+        <div class="footer" id="contact">
+          <footer>
+            <div>
+              <p class="talk">Let's talk!</p>
+              <a class="talk_button" href="mailto:loic.duhamel95@gmail.com?subject=Let's talk!">CONTACT ME</a>
+              <a href="https://www.linkedin.com/in/loicduhamel/"><svg class="linkedin_logo_footer" xmlns="http://www.w3.org/2000/svg" id="Capa_1" x="0px" y="0px" viewBox="0 0 510 510"><path fill="white" data-original="#000000" style="" class="" d="M459,0H51C22.95,0,0,22.95,0,51v408c0,28.05,22.95,51,51,51h408c28.05,0,51-22.95,51-51V51C510,22.95,487.05,0,459,0z     M153,433.5H76.5V204H153V433.5z M114.75,160.65c-25.5,0-45.9-20.4-45.9-45.9s20.4-45.9,45.9-45.9s45.9,20.4,45.9,45.9    S140.25,160.65,114.75,160.65z M433.5,433.5H357V298.35c0-20.399-17.85-38.25-38.25-38.25s-38.25,17.851-38.25,38.25V433.5H204    V204h76.5v30.6c12.75-20.4,40.8-35.7,63.75-35.7c48.45,0,89.25,40.8,89.25,89.25V433.5z"/></svg></a>
+            </div>
+            <p class="end_text">Develop with <svg xmlns="http://www.w3.org/2000/svg" id="Capa_1" x="0px" y="0px" viewBox="0 0 391.837 391.837" style="enable-background:new 0 0 391.837 391.837;" xml:space="preserve" width="20"><path style="fill:#D7443E;" d="M285.257,35.528c58.743,0.286,106.294,47.836,106.58,106.58   c0,107.624-195.918,214.204-195.918,214.204S0,248.165,0,142.108c0-58.862,47.717-106.58,106.58-106.58l0,0   c36.032-0.281,69.718,17.842,89.339,48.065C215.674,53.517,249.273,35.441,285.257,35.528z"/></svg><br/>&copy; 2021 Loïc Duhamel</p>
+          </footer>
+        </div>
       </div>
-
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
