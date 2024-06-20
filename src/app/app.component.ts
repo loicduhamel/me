@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { fadeInRightOnEnterAnimation } from 'angular-animations';
 import { PreloadService } from 'src/app/services/preloadService';
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
   selector: 'app-root',
@@ -12,10 +13,13 @@ import { PreloadService } from 'src/app/services/preloadService';
 })
 export class AppComponent implements OnInit {
   title = 'loicduhamel';
-  language = 'english';
+  language = 'en';
   isLoading = true;
 
-  constructor(private preloadService: PreloadService) {}
+  constructor(private preloadService: PreloadService, public translate: TranslateService) {
+    translate.addLangs(['en', 'fr']);
+    translate.setDefaultLang('en');
+  }
 
   ngOnInit(): void {
     this.preloadService.preloadAssets().then(() => {
@@ -63,6 +67,7 @@ export class AppComponent implements OnInit {
   }
 
   changeLanguage() {
-    this.language = this.language === 'english' ? 'french' : 'english';
+    this.language = this.language === 'en' ? 'fr' : 'en';
+    this.translate.use(this.language);
   }
 }
