@@ -1,7 +1,6 @@
 .accordion-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: auto;
+  width: 70%;
   outline: none;
   -webkit-tap-highlight-color: transparent;
   user-select: none;
@@ -95,6 +94,12 @@ li {
 }
 
 @media all and (max-width: 768px) {
+  .accordion-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   mat-expansion-panel-header {
     height: auto;
   }
@@ -103,6 +108,10 @@ li {
     max-width: 100px;
     width: 100px;
     min-width: 100px;
+  }
+
+  .container {
+    padding: 8px;
   }
 }
 
@@ -117,12 +126,6 @@ li {
 .container {
   padding: 16px;
   box-sizing: border-box;
-}
-
-@media all and (max-width: 768px) {
-  .container {
-    padding: 8px;
-  }
 }
 
 @media all and (min-width: 769px) {
