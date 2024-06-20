@@ -64,7 +64,6 @@ export class PreloadService {
       const img = new Image();
       img.src = url;
       img.onload = () => {
-        console.log(`Loaded: ${url}`);
         resolve();
       };
       img.onerror = () => {

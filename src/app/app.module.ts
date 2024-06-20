@@ -3,6 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import {
+  MatAccordion,
+  MatExpansionPanel,
+  MatExpansionPanelDescription,
+  MatExpansionPanelTitle,
+  MatExpansionModule
+} from "@angular/material/expansion";
 
 import { MaterialModule } from './material.module';
 
@@ -20,14 +31,6 @@ import { BachelorManComMarComponent } from './degree-modal/bachelor-man-com-mar/
 import { BtsSioSlamComponent } from './degree-modal/bts-sio-slam/bts-sio-slam.component';
 import { TpCdiComponent } from './degree-modal/tp-cdi/tp-cdi.component';
 import { MasterEiiComponent } from './degree-modal/master-eii/master-eii.component';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import {
-  MatAccordion,
-  MatExpansionPanel,
-  MatExpansionPanelDescription,
-  MatExpansionPanelTitle,
-  MatExpansionModule
-} from "@angular/material/expansion";
 
 @NgModule({
   declarations: [
@@ -57,7 +60,15 @@ import {
     MatExpansionPanelTitle,
     MatExpansionPanelDescription,
     MatExpansionModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoader,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [
     provideAnimationsAsync()
@@ -65,3 +76,6 @@ import {
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+export function httpTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
