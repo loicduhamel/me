@@ -62,7 +62,12 @@ export class AppComponent implements OnInit {
   downloadCV(){
     let link = document.createElement("a");
     link.download = "cv_loic_duhamel";
-    link.href = "assets/document/cv_loic_duhamel.pdf";
+
+    if (this.language == "en") {
+      link.href = "assets/document/cv_loic_duhamel_en.pdf";
+    } else {
+      link.href = "assets/document/cv_loic_duhamel_fr.pdf";
+    }
     link.click();
   }
 
